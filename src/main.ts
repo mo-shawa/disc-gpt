@@ -1,23 +1,36 @@
-import './style.css'
-import typescriptLogo from './typescript.svg'
-import { setupCounter } from './counter'
+import { Client, ClientOptions } from 'discord.js';
+import { token } from "./private/token.json"; // Todo - create bot in discord dev portal and add token
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://www.typescriptlang.org/" target="_blank">
-      <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
-    </a>
-    <h1>Vite + TypeScript</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite and TypeScript logos to learn more
-    </p>
-  </div>
-`
+const client = new Client({
+  intents: []
+}); // Todo - specify options depending on scope of project
 
-setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
+client.login(token);
+
+client.once('ready', () => {
+  console.log(`Bot is running - ${client.user?.tag}`);
+})
+
+/**
+ * Here is the syntax for having the bot watch for a message to initate an interaction:
+ * 
+ * client.on('messageCreate', async (message) => {
+ *   if (message.author.username.toLowerCase() === 'nrtz') {
+ *    return await message.reply('rat');
+ *  }
+ *  return;
+ * });
+ * 
+ */
+
+/**
+ * Here is the syntax for having the bot watch for an 'interaction' (user entered command):
+ * 
+ * client.on('interactionCreate', async (interaction) => {
+ *  if (!interaction.isCommand()) return;
+ *  
+ *  if (interaction.commandName === "commandname") {
+ *    ----- command logic goes here -----
+ *  }
+ * });
+ */
