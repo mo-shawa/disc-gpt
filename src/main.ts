@@ -1,5 +1,5 @@
 import { Client, ClientOptions } from 'discord.js';
-import { token } from "../private/token.json"; // Todo - create bot in discord dev portal and add token
+import { token } from "./private/token.json"; // Todo - create bot in discord dev portal and add token
 
 const client = new Client({
   intents: []
