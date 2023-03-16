@@ -7,8 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc --build",
     "clean": "tsc --build --clean",
-    "cmdbuilder": "npm run build && node /build/CommandList.js",
-    "start": "npm run build && node /build/main.js"
+    "cmdbuilder": "npm run clean && node /build/CommandList.js",
+    "start": "npm run clean && node /build/main.js"
   },
   "repository": {
     "type": "git",
