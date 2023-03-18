@@ -8,6 +8,7 @@
     "build": "tsc --build",
     "clean": "tsc --build --clean",
     "cmdbuilder": "npm run clean && node /build/CommandList.js",
+    "cmdremover": "npm run clean && node /build/DeleteCommands.js",
     "start": "npm run clean && node /build/main.js"
   },
   "repository": {
