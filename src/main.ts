@@ -18,13 +18,13 @@ client.on("interactionCreate", async (interaction) => {
 	if (!interaction.isCommand()) return
 
 	if (interaction.commandName === "prompt") {
-		const prompt = interaction.options.get("prompt")
+		const prompt = interaction.options.get("prompt")!.value
 
 		await interaction.deferReply()
 
-		const res = await promptCompletion(prompt!.value)
+		const res = await promptCompletion(prompt)
 
-		await interaction.editReply(res as string)
+		await interaction.editReply(prompt + "```\n" + res + "\n```")
 	}
 
 	if (interaction.commandName === "chat") {
