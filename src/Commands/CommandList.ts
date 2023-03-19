@@ -6,13 +6,13 @@ import { clientId, token, guildId } from "../private/token.json"
 // Initialize an array to store the commands
 const commands = [
 	new SlashCommandBuilder()
-		.setName("test")
-		.setDescription("Test command")
+		.setName("prompt")
+		.setDescription("Prompt GPT-3")
 		.addStringOption((input) =>
 			input
-				.setName("param")
-				.setDescription("A parameter for the command")
-				.setRequired(false)
+				.setName("prompt")
+				.setDescription("Ask for a haiku")
+				.setRequired(true)
 		),
 ].map((command) => command.toJSON())
 
