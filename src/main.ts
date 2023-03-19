@@ -1,12 +1,12 @@
 import { Client, GatewayIntentBits } from "discord.js"
-import { token } from "./private/token.json" // Todo - create bot in discord dev portal and add token
-import { promptEngine } from "./api/GPT"
+import { token } from "./private/token.json"
+import { promptCompletion, chatCompletion } from "./api/GPT"
 
 const { Guilds, GuildMessages } = GatewayIntentBits
 
 const client = new Client({
 	intents: [Guilds, GuildMessages],
-}) // Todo - specify options depending on scope of project
+})
 
 client.login(token)
 
@@ -15,21 +15,21 @@ client.once("ready", () => {
 })
 
 client.on("interactionCreate", async (interaction) => {
-	console.log("entered interaction")
 	if (!interaction.isCommand()) return
 
-	if (interaction.commandName === "test") {
+	if (interaction.commandName === "prompt") {
 		const prompt = interaction.options.get("prompt")
-		console.log("before defer")
-		// try ephemeral: true
-		await interaction.deferReply()
-		console.log("after defer")
 
-		const res = await promptEngine(prompt!.value)
-		console.log("after res")
+		await interaction.deferReply()
+
+		const res = await promptCompletion(prompt!.value)
 
 		await interaction.editReply(res as string)
-		// try reply if edit doesnt work
+	}
+
+	if (interaction.commandName === "chat") {
+		const res = await chatCompletion([])
+		await interaction.reply(res)
 	}
 })
 

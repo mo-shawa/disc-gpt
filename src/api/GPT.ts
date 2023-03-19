@@ -5,7 +5,7 @@ const configuration = new Configuration({
 })
 const openai = new OpenAIApi(configuration)
 
-export async function promptEngine(prompt: any) {
+export async function promptCompletion(prompt: any) {
 	const res = await openai.createCompletion({
 		model: "text-davinci-003",
 		prompt: prompt,
@@ -13,4 +13,8 @@ export async function promptEngine(prompt: any) {
 	})
 
 	return res.data.choices[0].text
+}
+
+export async function chatCompletion(messages: string[]) {
+	return "todo"
 }
