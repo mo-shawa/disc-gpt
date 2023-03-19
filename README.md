@@ -1,3 +1,5 @@
-# Mcdude let's get zane to make this for us xd
+# discGPT
 
-hahaha yeah
+a discord chat bot that lets users interact with the openAI API
+
+(WIP)
