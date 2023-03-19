@@ -7,11 +7,20 @@ import { clientId, token, guildId } from "../private/token.json"
 const commands = [
 	new SlashCommandBuilder()
 		.setName("prompt")
-		.setDescription("Prompt GPT-3")
+		.setDescription("completion prompt (GPT-3)")
 		.addStringOption((input) =>
 			input
 				.setName("prompt")
 				.setDescription("Ask for a haiku")
+				.setRequired(true)
+		),
+	new SlashCommandBuilder()
+		.setName("chat")
+		.setDescription("conversational prompt (chatGPT)")
+		.addStringOption((input) =>
+			input
+				.setName("prompt")
+				.setDescription("have a quick chat")
 				.setRequired(true)
 		),
 ].map((command) => command.toJSON())
