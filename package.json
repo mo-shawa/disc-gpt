@@ -1,44 +1,45 @@
 {
-  "name": "disc-gpt",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc --build",
-    "clean": "tsc --build --clean",
-    "cmdbuilder": "npm run clean && node /build/CommandList.js",
-    "start": "npm run clean && node /build/main.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mo-shawa/disc-gpt.git"
-  },
-  "keywords": [],
-  "contributors": [
-    {
-      "name": "Mahmoud El Shawa",
-      "email": "placeholder@placeholder.com",
-      "url": "http://placeholder.com"
-    },
-    {
-      "name": "Carmen Shannon",
-      "email": "carmen.shannon16@gmail.com",
-      "url": "http://carmen-shannon.com"
-    }
-  ],
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/mo-shawa/disc-gpt/issues"
-  },
-  "homepage": "https://github.com/mo-shawa/disc-gpt#readme",
-  "dependencies": {
-    "@discordjs/builders": "^1.5.0",
-    "@discordjs/rest": "^1.6.0",
-    "@types/node": "^18.15.3",
-    "discord-api-types": "^0.37.36",
-    "discord.js": "^14.8.0",
-    "dotenv": "^16.0.3",
-    "typescript": "^4.9.5"
-  }
+	"name": "disc-gpt",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"build": "tsc --build",
+		"clean": "tsc --build --clean",
+		"cmdbuilder": "npm run clean && node /build/CommandList.js",
+		"start": "npm run clean && node /build/index.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/mo-shawa/disc-gpt.git"
+	},
+	"keywords": [],
+	"contributors": [
+		{
+			"name": "Mahmoud El-Shawa",
+			"email": "mahmoud@shawa.dev",
+			"url": "http://shawa.dev"
+		},
+		{
+			"name": "Carmen Shannon",
+			"email": "carmen.shannon16@gmail.com",
+			"url": "http://carmen-shannon.com"
+		}
+	],
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/mo-shawa/disc-gpt/issues"
+	},
+	"homepage": "https://github.com/mo-shawa/disc-gpt#readme",
+	"dependencies": {
+		"@discordjs/builders": "^1.5.0",
+		"@discordjs/rest": "^1.6.0",
+		"@types/node": "^18.15.3",
+		"discord-api-types": "^0.37.36",
+		"discord.js": "^14.8.0",
+		"dotenv": "^16.0.3",
+		"openai": "^3.2.1",
+		"typescript": "^4.9.5"
+	}
 }
