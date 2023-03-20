@@ -28,6 +28,8 @@ const commands = [
 const rest = new REST({ version: "9" }).setToken(token)
 
 // commands are posted to the bot using a PUT method with the commands as the body
+// applicationGuildCommands(clientId, guildId) - pushes commands locally to a specific guild
+// applicationCommands(clientId) - pushes commands globally
 rest
 	.put(Routes.applicationGuildCommands(clientId, guildId), { body: commands })
 	.then(() => console.log("Successfully registered application commands"))
